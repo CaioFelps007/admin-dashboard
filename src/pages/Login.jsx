@@ -1,53 +1,84 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./Login.css";
 
 function Login() {
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [isLeft, setIsLeft] = useState(true);
+
+  const handleSignUpClick = () => {
+    setIsSignUp(true);
+  };
+
+  const handleSignInClick = () => {
+    setIsSignUp(false);
+  };
+
+  const handleToggleClick = () => {
+    setIsLeft(!isLeft);
+  };
+
   return (
-    <div className="container" id="container">
-      <div className="form-container sign-up">
-        <form>
-          <h1> Crie sua Conta </h1>
+    <div className={`container ${isSignUp ? "active" : ""}`}>
+      <div className={`form-container ${isSignUp ? "sign-up" : "sign-in"}`}>
+        {isSignUp ? (
+          <div className="form-sign-up">
+            <h1> Crie sua Conta!</h1>
+            <form>
+              <span>Ou, use seu email para cadastro</span>
+              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Email" />
+              <input type="text" placeholder="CNPJ" />
+              <input type="text" placeholder="Company Name" />
+              <input type="password" placeholder="Password" />
+              <input
+                className="FilesChoose"
+                type="file"
+                placeholder="Escolher Imagem da Empresa"
+              />
 
-          <div className="social-icons">
-            <a href="#" className="icons">
-              <i className="fa-brands fa-google-plus-g"></i>
-            </a>
-            <a href="#" className="icons">
-              <i className="fa-brands fa-facebook"></i>
-            </a>
-            <a href="#" className="icons">
-              <i className="fa-brands fa-github"></i>
-            </a>
-            <span>Ou, use seu email para cadastro</span>
-
-            <input type="text" placeholder="Name" />
-            <input type="text" placeholder="Email" />
-            <input type="password" placeholder="Senha" />
-            <button>Cadastre</button>
+              <button className="buttonSignIn" type="button">
+                Criar
+              </button>
+            </form>
           </div>
-        </form>
+        ) : (
+          <div className="form-sign-in">
+            <h1 className="titleLogin"> Bem-vindo de volta!</h1>
+            <form>
+              <input type="text" placeholder="Email" />
+              <input type="password" placeholder="Senha" />
+              <button type="button" className="buttonSignIn">
+                Entrar
+              </button>
+            </form>
+          </div>
+        )}
       </div>
 
-      <div className="toggle-container">
-        <div className="toggle">
-          <div className="toggle-panel toggle-left">
-            <h1>Welcome Back</h1>
-            <p>Entre na sua conta</p>
+      <div className={`toggle-container ${isSignUp ? "active" : ""}`}>
+        <div className={`toggle ${isSignUp ? "sign-up" : "sign-in"}`}>
+          {isSignUp ? (
+            <div class="toggle-panel toggle-left">
+              <h1>Welcome Back</h1>
+              <p>Entre na sua conta</p>
 
-            <button className="hidden" id="login">
-              Login
-            </button>
-            <button className="hidden" id="login">
-              Login
-            </button>
-          </div>
-          <div className="toggle-panel toggle-right">
-            <h1>Hello, Friend</h1>
-            <p>Faça seu Registro</p>
-            <button className="hidden" id="cadastro">
-              Cadastro
-            </button>
-          </div>
+              <button className="hidden" id="login" onClick={handleSignInClick}>
+                Login
+              </button>
+            </div>
+          ) : (
+            <div class="toggle-panel toggle-right">
+              <h1>Hello, Friend</h1>
+              <p>Faça seu Registro</p>
+              <button
+                className="hidden"
+                id="cadastro"
+                onClick={handleSignUpClick}
+              >
+                Cadastro
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
