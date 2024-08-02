@@ -6,6 +6,7 @@ import {
   SettingOutlined,
   StockOutlined,
 } from "@ant-design/icons";
+import { IoPieChartSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
 const MenuList = ({ darkTheme }) => {
@@ -16,6 +17,12 @@ const MenuList = ({ darkTheme }) => {
   };
 
   const menuItems = [
+    {
+      key: "Dashboard",
+      icon: <IoPieChartSharp />,
+      label: "Dashboard",
+      onClick: () => handleNavigation("/dashboard"),
+    },
     {
       key: "subestoque",
       icon: <StockOutlined />,
