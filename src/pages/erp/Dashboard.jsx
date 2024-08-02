@@ -19,6 +19,10 @@ import {
 } from "recharts";
 import "../../App.css";
 
+// Componentes XAxis e YAxis modificados para usar parâmetros padrão em vez de defaultProps
+const XAxisWithDefault = (props) => <XAxis {...props} />;
+const YAxisWithDefault = (props) => <YAxis {...props} />;
+
 function Home() {
   const data = [
     {
@@ -116,8 +120,8 @@ function Home() {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxisWithDefault dataKey="name" />
+            <YAxisWithDefault />
             <Tooltip />
             <Legend />
             <Bar dataKey="pv" fill="#8884d8" />
@@ -138,8 +142,8 @@ function Home() {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxisWithDefault dataKey="name" />
+            <YAxisWithDefault />
             <Tooltip />
             <Legend />
             <Line

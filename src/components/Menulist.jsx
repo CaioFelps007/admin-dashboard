@@ -4,85 +4,222 @@ import {
   AreaChartOutlined,
   PayCircleOutlined,
   SettingOutlined,
-  BarsOutlined,
   StockOutlined,
 } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const MenuList = ({ darkTheme }) => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
+  const menuItems = [
+    {
+      key: "subestoque",
+      icon: <StockOutlined />,
+      label: "Estoque",
+      children: [
+        {
+          key: "atualizar",
+          label: "Atualizar produtos",
+          onClick: () => handleNavigation("/up_produto"),
+        },
+        {
+          key: "movimentacoes",
+          label: "Movimentações",
+          onClick: () => handleNavigation("/movimentacoes"),
+        },
+        {
+          key: "registrar",
+          label: "Registrar produtos",
+          onClick: () => handleNavigation("/cad_produto"),
+        },
+      ],
+    },
+    {
+      key: "financeiro",
+      icon: <MoneyCollectOutlined />,
+      label: "Financeiro",
+      children: [
+        {
+          key: "contaspagar",
+          label: "Contas à pagar",
+          children: [
+            {
+              key: "cadastrodespesas",
+              label: "Cadastro despesas",
+              onClick: () => handleNavigation("/cad_despesas"),
+            },
+            {
+              key: "cadastrofornecedores",
+              label: "Cadastro fornecedores",
+              onClick: () => handleNavigation("/cad_fornecedor"),
+            },
+            {
+              key: "despesas",
+              label: "Despesas",
+              onClick: () => handleNavigation("/despesas"),
+            },
+            {
+              key: "fornecedores",
+              label: "Fornecedores",
+              onClick: () => handleNavigation("/fornecedores"),
+            },
+            {
+              key: "pagamentos",
+              label: "Pagamentos",
+              onClick: () => handleNavigation("/pagamentos"),
+            },
+          ],
+        },
+        {
+          key: "contasreceber",
+          label: "Contas à receber",
+          children: [
+            {
+              key: "fluxo",
+              label: "Fluxo de caixa",
+              onClick: () => handleNavigation("/fluxodecaixa"),
+            },
+            {
+              key: "receitas",
+              label: "Receitas",
+              onClick: () => handleNavigation("/receitas"),
+            },
+          ],
+        },
+        {
+          key: "planoconta",
+          label: "Plano conta",
+          children: [
+            {
+              key: "balancete",
+              label: "Balancete",
+              onClick: () => handleNavigation("/balancete"),
+            },
+            {
+              key: "dre",
+              label: "DRE",
+              onClick: () => handleNavigation("/dre"),
+            },
+            {
+              key: "razao",
+              label: "Razão",
+              onClick: () => handleNavigation("/razao"),
+            },
+          ],
+        },
+        {
+          key: "imposto",
+          label: "Imposto",
+          children: [
+            {
+              key: "cadimposto",
+              label: "Cadastrar imposto",
+              onClick: () => handleNavigation("/cad_imposto"),
+            },
+            {
+              key: "cofins",
+              label: "Cofins",
+              onClick: () => handleNavigation("/cofins"),
+            },
+            {
+              key: "csll",
+              label: "Csll",
+              onClick: () => handleNavigation("/csll"),
+            },
+            {
+              key: "icms",
+              label: "Icms",
+              onClick: () => handleNavigation("/icms"),
+            },
+            {
+              key: "ipi",
+              label: "Ipi",
+              onClick: () => handleNavigation("/ipi"),
+            },
+            {
+              key: "irpj",
+              label: "Irpj",
+              onClick: () => handleNavigation("/irpj"),
+            },
+            {
+              key: "iss",
+              label: "Iss",
+              onClick: () => handleNavigation("/iss"),
+            },
+            {
+              key: "pis",
+              label: "Pis",
+              onClick: () => handleNavigation("/pis"),
+            },
+          ],
+        },
+      ],
+    },
+    {
+      key: "vendas",
+      icon: <AreaChartOutlined />,
+      label: "Vendas",
+      children: [
+        {
+          key: "notafiscal",
+          label: "Nota fiscal",
+          children: [
+            {
+              key: "cadastro",
+              label: "Cadastro",
+              onClick: () => handleNavigation("/cadastronf"),
+            },
+            {
+              key: "emissao",
+              label: "Emissão nf",
+              onClick: () => handleNavigation("/emissaonf"),
+            },
+          ],
+        },
+        {
+          key: "cadastrocliente",
+          label: "Cadastro cliente",
+          onClick: () => handleNavigation("/cad_cliente"),
+        },
+        {
+          key: "clientes",
+          icon: <PayCircleOutlined />,
+          label: "Clientes",
+          onClick: () => handleNavigation("/clientes"),
+        },
+        {
+          key: "precofinal",
+          icon: <PayCircleOutlined />,
+          label: "Preço final",
+          onClick: () => handleNavigation("/precofinal"),
+        },
+        {
+          key: "historicovendas",
+          icon: <PayCircleOutlined />,
+          label: "Histórico de Vendas",
+          onClick: () => handleNavigation("/vendas"),
+        },
+      ],
+    },
+    {
+      key: "setting",
+      icon: <SettingOutlined />,
+      label: "Setting",
+      onClick: () => handleNavigation("/setting"),
+    },
+  ];
+
   return (
-    <Menu theme={darkTheme ? "dark" : "light"} className="menu-bar">
-      {/* Menu Home */}
-
-      <Menu.SubMenu key="subestoque" icon={<StockOutlined />} title="Estoque">
-        <Menu.Item key="atualizar">Atualizar produtos</Menu.Item>
-        <Menu.Item key="movimentacoes">Movimentações</Menu.Item>
-        <Menu.Item key="registrar">Registrar produtos</Menu.Item>
-      </Menu.SubMenu>
-
-      <Menu.SubMenu
-        key="financeiro"
-        icon={<MoneyCollectOutlined />}
-        title="Financeiro"
-      >
-        <Menu.SubMenu key="contaspagar" title="Contas à pagar">
-          <Menu.Item key="cadastro">Cadastro despesas</Menu.Item>
-          <Menu.Item key="cadastro">Cadastro fornecedores</Menu.Item>
-          <Menu.Item key="despesas">Despesas</Menu.Item>
-          <Menu.Item key="fornecedores">Fornecedores</Menu.Item>
-          <Menu.Item key="pagamentos">Pagamentos</Menu.Item>
-        </Menu.SubMenu>
-
-        <Menu.SubMenu key="contasreceber" title="Contas à receber">
-          <Menu.Item key="cadastrocliente">Cadastro cliente</Menu.Item>
-          <Menu.Item key="fluxo">Fluxo de caixa</Menu.Item>
-          <Menu.Item key="receitas">Receitas</Menu.Item>
-        </Menu.SubMenu>
-
-        <Menu.SubMenu key="planoconta" title="Plano conta">
-          <Menu.Item key="balancete">Balancete</Menu.Item>
-          <Menu.Item key="dre">DRE</Menu.Item>
-          <Menu.Item key="razao">Razão</Menu.Item>
-        </Menu.SubMenu>
-
-        <Menu.SubMenu key="impostos" title="Impostos">
-          <Menu.Item key="cadimpostos">Cadastrar impostos</Menu.Item>
-          <Menu.Item key="cofins">Cofins</Menu.Item>
-          <Menu.Item key="csll">Csll</Menu.Item>
-          <Menu.Item key="icms">Icms</Menu.Item>
-          <Menu.Item key="ipi">Ipi</Menu.Item>
-          <Menu.Item key="irpj">Irpj</Menu.Item>
-          <Menu.Item key="iss">Iss</Menu.Item>
-          <Menu.Item key="pis">Pis</Menu.Item>
-        </Menu.SubMenu>
-      </Menu.SubMenu>
-      {/* Menu Progresso */}
-
-      <Menu.SubMenu key="vendas" icon={<AreaChartOutlined />} title="Vendas">
-        <Menu.SubMenu key="notafiscal" title="Nota fiscal">
-          <Menu.Item key="cadastro">Cadastro</Menu.Item>
-          <Menu.Item key="emissao">Emissão nf</Menu.Item>
-        </Menu.SubMenu>
-
-        <Menu.Item key="pedidos" icon={<PayCircleOutlined />}>
-          Pedidos
-        </Menu.Item>
-
-        <Menu.Item key="historico" icon={<PayCircleOutlined />}>
-          Histórico vendas
-        </Menu.Item>
-
-        <Menu.Item key="preco" icon={<PayCircleOutlined />}>
-          Preço final
-        </Menu.Item>
-      </Menu.SubMenu>
-
-      {/* Menu Payment */}
-
-      {/* Menu Setting */}
-      <Menu.Item key="setting" icon={<SettingOutlined />}>
-        Setting
-      </Menu.Item>
-    </Menu>
+    <Menu
+      theme={darkTheme ? "dark" : "light"}
+      className="menu-bar"
+      items={menuItems}
+    />
   );
 };
+
 export default MenuList;

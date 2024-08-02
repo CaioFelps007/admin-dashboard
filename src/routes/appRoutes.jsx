@@ -9,24 +9,24 @@ import Sidebar from "../components/Sidebar";
 import Dashboard from "../pages/erp/Dashboard";
 import Login from "../pages/Login";
 
-//ESTOQUE
+// ESTOQUE
 import Cad_produto from "../pages/erp/estoque/cad_produto";
 import Movimentacoes from "../pages/erp/estoque/movimentacoes";
 import Up_produto from "../pages/erp/estoque/up_produto";
 
-//FINANCEIRO
-//CONTAS A PAGAR
+// FINANCEIRO
+// CONTAS A PAGAR
 import Cad_Despesas from "../pages/erp/financeiro/contaspagar/cad_despesas";
 import Cad_fornecedor from "../pages/erp/financeiro/contaspagar/cad_fornecedor";
 import Despesas from "../pages/erp/financeiro/contaspagar/despesas";
 import Fornecedores from "../pages/erp/financeiro/contaspagar/fornecedores";
 import Pagamentos from "../pages/erp/financeiro/contaspagar/pagamentos";
 
-//CONTAS A RECEBER
+// CONTAS A RECEBER
 import Fluxodecaixa from "../pages/erp/financeiro/contasreceber/fluxodecaixa";
 import Receitas from "../pages/erp/financeiro/contasreceber/receitas";
 
-//IMPOSTO
+// IMPOSTO
 import Cad_imposto from "../pages/erp/financeiro/imposto/cad_imposto";
 import Cofins from "../pages/erp/financeiro/imposto/cofins";
 import Csll from "../pages/erp/financeiro/imposto/csll";
@@ -36,19 +36,19 @@ import Irpj from "../pages/erp/financeiro/imposto/irpj";
 import Iss from "../pages/erp/financeiro/imposto/iss";
 import Pis from "../pages/erp/financeiro/imposto/pis";
 
-//PLANOCONTAS
+// PLANOCONTAS
 import Balancete from "../pages/erp/financeiro/planocontas/balancete";
 import Dre from "../pages/erp/financeiro/planocontas/dre";
 import Razao from "../pages/erp/financeiro/planocontas/razao";
 
-//VENDAS
+// VENDAS
 import Vendas from "../pages/erp/vendas/vendas";
-//NOTAFISCAL
 
+// NOTAFISCAL
 import Cadastronf from "../pages/erp/vendas/notafiscal/cadastronf";
 import Emissaonf from "../pages/erp/vendas/notafiscal/emissaonf";
 
-//PEDIDOS
+// PEDIDOS
 import Cad_cliente from "../pages/erp/vendas/pedidos/cad_cliente";
 import Clientes from "../pages/erp/vendas/pedidos/clientes";
 import Precofinal from "../pages/erp/vendas/pedidos/precofinal";

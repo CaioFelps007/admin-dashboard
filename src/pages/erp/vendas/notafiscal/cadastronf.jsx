@@ -4,7 +4,7 @@ function Cad_nf() {
   return (
     <main className="main-container">
       <div className="main-title">
-        <h3>Cadastro de Nota Fiscal</h3>
+        <h1>Cadastro de Nota Fiscal</h1>
       </div>
     </main>
   );
