@@ -26,7 +26,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           className="menu"
         >
           <div className="titulo-box">
-            <h1 className="titulo">Venturos</h1>
+            <h1 className="titulo">Venturo</h1>
           </div>
           <MenuList darkTheme={darkTheme} />
           <ToggleThemeButton darkTheme={darkTheme} toggleTheme={toggleTheme} />
