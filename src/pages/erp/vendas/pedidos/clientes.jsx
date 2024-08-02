@@ -1,13 +1,13 @@
 import React from "react";
 
-function AtualizarProduto() {
+function clientes() {
   return (
     <main className="main-container">
       <div className="main-title">
-        <h3>Atualizar Produto</h3>
+        <h3>Clientes</h3>
       </div>
     </main>
   );
 }
 
-export default AtualizarProduto;
+export default clientes;

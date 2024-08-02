@@ -7,13 +7,14 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body {
+
+.BodyDiv {
     background-color: aliceblue;
     background: linear-gradient(to right, #e2e2e2, #c9d6ff);
-    display: flex;
+  display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex: 1;
     height: 100vh;
 }
 
@@ -30,6 +31,11 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-image: url(../images/FundoVenturoOk.png);
+    background-size: cover;
+    background-position: center;
+  
+
 }
 
 .form-container {
@@ -47,9 +53,6 @@ body {
     width: 50%;
     height: 100%;
     display: flex;
-
-    padding: 0 40px;
- 
     text-align: center;
 
 }
@@ -82,28 +85,16 @@ body {
 }
 
 
-
-@keyframes move {
-    0%, 49.99% {
-        opacity: 0;
-    }
-    50%, 100% {
-        opacity: 0;
-    }
-}
-
-
-
 .toggle-container {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 50%;
+    width: 52%;
     height: 100%;
     overflow: hidden;
     transition: transform 0.6s ease-in-out;
     border-radius: 150px 0 0 100px;
-    z-index: 1000;
+
 }
 
 .container.active .toggle-container {
@@ -115,7 +106,6 @@ body {
     background-color: #512da5;
     height: 100%;
     background: linear-gradient(to right, #066699, #AEDD2B);
-    color: #fff;
     position: absolute;
     left: -100%;
     width: 200%;
@@ -142,7 +132,6 @@ body {
 
 .toggle-left {
     left: 0;
-    transform: translateX(-200%);
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -218,8 +207,4 @@ font-size: 35px;
 .container p{
     font-size: 20px;
     margin: 20px;
-}
-.input FilesChoose {
-    background-color: transparent;
-    color: #000;
 }

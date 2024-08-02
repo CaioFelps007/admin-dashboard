@@ -19,7 +19,7 @@ import {
 } from "recharts";
 import "../../App.css";
 
-function Home() {
+function DashboardAdmin() {
   const data = [
     {
       name: "Page A",
