@@ -7,12 +7,11 @@ import {
 } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Dashboard from "../pages/erp/Dashboard";
+import DashboardAdmin from "../pages/erp/DashboardAdmin";
 import Login from "../pages/Login";
 
 // ESTOQUE
 import Cad_produto from "../pages/erp/estoque/cad_produto";
-import Movimentacoes from "../pages/erp/estoque/movimentacoes";
-import Up_produto from "../pages/erp/estoque/up_produto";
 
 // FINANCEIRO
 // CONTAS A PAGAR
@@ -86,9 +85,8 @@ function RouteRenderer({ openSidebarToggle, OpenSidebar }) {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard_admin" element={<DashboardAdmin />} />
           <Route path="/cad_produto" element={<Cad_produto />} />
-          <Route path="/movimentacoes" element={<Movimentacoes />} />
-          <Route path="/up_produto" element={<Up_produto />} />
           <Route path="/cadastronf" element={<Cadastronf />} />
           <Route path="/emissaonf" element={<Emissaonf />} />
           <Route path="/cad_cliente" element={<Cad_cliente />} />
