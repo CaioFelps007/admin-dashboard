@@ -1,57 +1,15 @@
 import React from "react";
 import { FaPenToSquare, FaPlus, FaTrashCan } from "react-icons/fa6";
-import {
-  ResponsiveContainer,
-  ComposedChart,
-  Line,
-  Area,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from "recharts";
+import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from "recharts";
 
-const data = [
-  {
-    name: "Page A",
-    uv: 590,
-    pv: 800,
-    amt: 1400,
-  },
-  {
-    name: "Page B",
-    uv: 868,
-    pv: 967,
-    amt: 1506,
-  },
-  {
-    name: "Page C",
-    uv: 1397,
-    pv: 1098,
-    amt: 989,
-  },
-  {
-    name: "Page D",
-    uv: 1480,
-    pv: 1200,
-    amt: 1228,
-  },
-  {
-    name: "Page E",
-    uv: 1520,
-    pv: 1108,
-    amt: 1100,
-  },
-  {
-    name: "Page F",
-    uv: 1400,
-    pv: 680,
-    amt: 1700,
-  },
+const data01 = [
+  { name: "Group A", value: 400 },
+  { name: "Group B", value: 300 },
+  { name: "Group C", value: 300 },
+  { name: "Group D", value: 200 },
+  { name: "Group E", value: 278 },
+  { name: "Group F", value: 189 },
 ];
-
 function Despesas() {
   return (
     <main className="main-container">
@@ -62,54 +20,53 @@ function Despesas() {
 
       {/* Botões para cadastrar despesas, excluir ou editar */}
       <div className="Button_Despesas">
-        <button className="Button-Menu">
+        <button className="Button-Despesas_letras">
           Adicionar
           <FaPlus />
         </button>
-        <button className="Button-Menu">
+        <button className="Button-Despesas_letras">
           Editar
           <FaPenToSquare />
         </button>
-        <button className="Button-Menu">
+        <button className="Button-Despesas_letras">
           Excluir
           <FaTrashCan />
         </button>
       </div>
 
       {/* Div com as despesas mais gerais */}
-      {/* Um gráfico representativo */}
-      <ResponsiveContainer>
-        <ComposedChart
-          width={200}
-          height={100}
-          data={data}
-          margin={{
-            top: 20,
-            right: 20,
-            bottom: 20,
-            left: 20,
-          }}
-        >
-          <CartesianGrid stroke="#AEDD2B" />
-          <XAxis dataKey="name" scale="band" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Area type="monotone" dataKey="amt" fill="#0A5483" stroke="#02416D" />
-          <Bar dataKey="pv" barSize={20} fill="#AEDD2B" />
-          <Line type="monotone" dataKey="uv" stroke="#02416D" />
-        </ComposedChart>
-      </ResponsiveContainer>
+
       {/* Box sobre contas */}
-      <div className="despesa-box1">
-        <h3>Contas a pagar em aberto</h3>
-        <h1>R$ 14.987,93</h1>
-      </div>
-      <div className="despesa-box2">
-        <h3>Contas a pagar em atraso</h3>
-        <h1>R$ 1.298,24</h1>
+      <div className="box_desp">
+        <div className="despesa1-box">
+          <h3>Contas a pagar em aberto</h3>
+          <h1>R$ 14.987,93</h1>
+        </div>
+        <div className="despesa2-box">
+          <h3>Contas a pagar em atraso</h3>
+          <h1>R$ 1.298,24</h1>
+        </div>
       </div>
 
+      {/* Um gráfico representativo */}
+      <div className="gráfico1">
+        <PieChart width={700} height={300}>
+          <Pie
+            dataKey="value"
+            isAnimationActive={false}
+            data={data01}
+            cx="50%"
+            cy="50%"
+            outerRadius={80}
+            fill="#02416D"
+            label
+            className="pie1"
+          />
+
+          <Tooltip />
+        </PieChart>
+        <h4 className="legenda_despesas">Gráfico representativo</h4>
+      </div>
       {/* Div para tabela com as despesas detalhadas */}
     </main>
   );

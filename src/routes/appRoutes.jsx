@@ -15,8 +15,6 @@ import Cad_produto from "../pages/erp/estoque/cad_produto";
 
 // FINANCEIRO
 // CONTAS A PAGAR
-import Cad_Despesas from "../pages/erp/financeiro/contaspagar/cad_despesas";
-import Cad_fornecedor from "../pages/erp/financeiro/contaspagar/cad_fornecedor";
 import Despesas from "../pages/erp/financeiro/contaspagar/despesas";
 import Fornecedores from "../pages/erp/financeiro/contaspagar/fornecedores";
 import Pagamentos from "../pages/erp/financeiro/contaspagar/pagamentos";
@@ -93,8 +91,6 @@ function RouteRenderer({ openSidebarToggle, OpenSidebar }) {
           <Route path="/clientes" element={<Clientes />} />
           <Route path="/precofinal" element={<Precofinal />} />
           <Route path="/vendas" element={<Vendas />} />
-          <Route path="/cad_despesas" element={<Cad_Despesas />} />
-          <Route path="/cad_fornecedor" element={<Cad_fornecedor />} />
           <Route path="/despesas" element={<Despesas />} />
           <Route path="/fornecedores" element={<Fornecedores />} />
           <Route path="/pagamentos" element={<Pagamentos />} />

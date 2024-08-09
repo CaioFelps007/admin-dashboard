@@ -563,3 +563,79 @@ tbody td {
   position: relative;
   left: 700px;
 }
+
+
+/* Despesas */
+.Button_Despesas {
+  gap: 20px;
+  border-bottom: solid 1px;
+  border-color: #0a5483;
+  flex-direction: row;
+}
+.Button-Despesas_letras {
+  width: 120px;
+  height: 40px;
+  justify-content: space-between;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.despesa1-box {
+  width: 290px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+}
+
+.despesa1-box:hover {
+  opacity: 0.8;
+
+  background-color: #0000001c;
+}
+.despesa2-box {
+  width: 290px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+}
+
+.despesa2-box:hover {
+  opacity: 0.8;
+  background-color: #0000001a;
+}
+
+.box_desp {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.despesa1-box,
+.despesa2-box {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.gráfico1 {
+  width: 50%;
+  justify-content: center;
+  flex-direction: center;
+}
+
+.pie1 {
+  margin-left: 200px;
+}

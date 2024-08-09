@@ -78,7 +78,7 @@ function RegistroProduto() {
           borderRadius: 20,
           transform: "translate(-50%, -50%)",
           background: "linear-gradient(135deg, #ddd, silver)",
-          boxShadow: "10 20px 30px rgba(0, 0, 0.8, 0.4)",
+          boxShadow: "10 20px 30px rgba(0, 0, 0, 0.9)",
         }}
         show={showModal}
         onHide={handleClose}
@@ -101,7 +101,6 @@ function RegistroProduto() {
               </button>
             </div>
           </form>
-          <img src={Venturo} className="ImageModal" />
         </div>
       </Modal>
     </main>
